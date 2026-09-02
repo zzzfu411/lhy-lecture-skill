@@ -1,6 +1,6 @@
 # 生成时核对（BRIEF）
 
-画每一页之前过一遍。细则：[references/humanize-classroom.md](references/humanize-classroom.md)。视觉栈仍走 `SKILL.md`（2025 16:9、直线资料流、密度两档、封面 72–96 pt）。
+画每一页之前过一遍。口语：[references/humanize-classroom.md](references/humanize-classroom.md)。图：[references/diagrams-required.md](references/diagrams-required.md)。视觉栈仍走 `SKILL.md`（2025 16:9、直线资料流、密度两档、封面 72–96 pt）。
 
 ```
 [ ] 无本页 / 下一步字幕。没用到的参数盒：拿掉或静默，不要写「下一步」
@@ -10,5 +10,9 @@
 [ ] 底栏若有，是一句人话，不是复盘刚才的算术
 [ ] 没有字楔进两层块之间的 8 pt 缝；盒相交先删标签
 [ ] 同一指称只用一个名词
+[ ] 机制页画出那个东西（云 / 结构图 / 点+云同页）。彩色字胶囊不是图
+[ ] 没有公式墙。一页一个机制：图 + 一笔数
+[ ] 教学页底边没有 25%+ 死白；盒子贴住内容
+[ ] 芯片内数字垂直居中，二次标签不贴地板
 [ ] 出 python-pptx；资料流是 2.5–3.5 pt 直线 + triangle 尾
 ```

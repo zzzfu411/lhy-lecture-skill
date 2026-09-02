@@ -21,8 +21,8 @@ git clone https://github.com/zzzfu411/lhy-lecture-skill.git ~/.cursor/skills/lhy
 | 路径 | 内容 |
 |------|------|
 | `SKILL.md` | 入口、合格线、工作流 |
-| `BRIEF.md` | 生成时核对（chrome / 口语 / 比喻） |
-| `references/` | 视觉、页型、口播、反模式、课堂口语禁止清单、语料对照 |
+| `BRIEF.md` | 生成时核对（chrome / 口语 / 比喻 / 图） |
+| `references/` | 视觉、页型、图硬规则、口播、反模式、课堂口语禁止清单、语料对照 |
 | `assets/` | 公开仓只带图像生成的样例 `ruler.png` |
 | `eval/` | bias 换题实测的计划、脚本、口播（不含成品 pptx） |
 

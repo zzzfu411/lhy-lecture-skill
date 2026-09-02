@@ -19,7 +19,7 @@ description: >-
 ## 先读什么
 
 1. [style-essence.md](references/style-essence.md)（必读）
-2. 画页：[ppt-visual.md](references/ppt-visual.md)、[ppt-rhetoric.md](references/ppt-rhetoric.md)、[slide-archetypes.md](references/slide-archetypes.md)
+2. 画页：[ppt-visual.md](references/ppt-visual.md)、[ppt-rhetoric.md](references/ppt-rhetoric.md)、[slide-archetypes.md](references/slide-archetypes.md)、[diagrams-required.md](references/diagrams-required.md)
 3. 角色贴图：[assets.md](references/assets.md)（可选；许多 2025 机制页零贴纸）
 4. 口播：[lecture-voice.md](references/lecture-voice.md)、[spoken-phrases.md](references/spoken-phrases.md)
 5. 课堂口语禁止清单：[humanize-classroom.md](references/humanize-classroom.md)（chrome / 否定式口号 / 比喻一拍）
@@ -38,6 +38,7 @@ description: >-
 | 示意潦草 | 每个零件有名字、对齐；示意 = 数字假，不是图烂；宽高为正。 |
 | 不生动 | 钩子是听众正在过的场面（半条资料流 / 点线缺口 / 教室漫画）；有具体失败者；幽默来自机制，不是「笑点是：」标语。 |
 | AI 导播腔 | 页上无「本页算完 / 下一步」。底栏不是复盘。禁止「不是 X，是 Y」。比喻一拍能 get。见 [humanize-classroom.md](references/humanize-classroom.md)。 |
+| 只点名不画 | 机制页画出那个东西：分布是椭圆云，架构是结构图，对比是点和云同页。禁止公式墙。教学页底边 25%+ 空着失败。芯片内数字垂直居中。见 [diagrams-required.md](references/diagrams-required.md)。 |
 
 宁可 50–85 张疏密混排、各站得住的页，不要 24 张中等密度吉祥物页，也不要 22 张填满数字的机制表。
 
@@ -67,7 +68,7 @@ description: >-
 ```
 - [ ] 1. 一句话课核（机制，能当口头禅）
 - [ ] 2. 一条贯穿隐喻 + 页上图例（日常物 → 技术对象）
-- [ ] 3. 主图选型：淡彩圆角块（2025 更常见）或贴纸资料流（只用在需要具象样本的页）；不要贴纸游行
+- [ ] 3. 主图选型：先画出那个东西（云 / 结构图 / 点+云）；淡彩块或贴纸资料流是零件，不是替代品；不要贴纸游行
 - [ ] 4. 5–9 个节拍，其中至少一拍是「当场能算的一小步」
 - [ ] 5. 先设计一张完整主图，再复制递增揭示（五种合法动作，见 §4）。机制课必须有同一组三步块走三页（原型 G）
 - [ ] 6. 口播：带人看图、算那一笔
@@ -114,7 +115,7 @@ description: >-
 
 - 抽每页字数：约 40 字只防空标题页
 - 搜 XML：`cx`/`cy` 不得为负；机制页 `prst="rightArrow"` ≈ 0（G 步块之间的灰箭头除外）；E/F/K 无 `a:tbl`
-- 目检：零件有名字、红框不压字、资料流是细直线不是胖 chevron、默认封面课题是白的、无「本页/下一步」、无否定式口号、标签不与别的形状相交
+- 目检：零件有名字、红框不压字、资料流是细直线不是胖 chevron、默认封面课题是白的、无「本页/下一步」、无否定式口号、标签不与别的形状相交、机制页有云/结构图而不是字墙、盒内数字居中、教学页底边没有大块死白
 
 ## 和相邻 skill 的边界
 
