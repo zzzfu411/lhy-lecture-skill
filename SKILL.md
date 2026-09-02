@@ -22,8 +22,9 @@ description: >-
 2. 画页：[ppt-visual.md](references/ppt-visual.md)、[ppt-rhetoric.md](references/ppt-rhetoric.md)、[slide-archetypes.md](references/slide-archetypes.md)
 3. 角色贴图：[assets.md](references/assets.md)（可选；许多 2025 机制页零贴纸）
 4. 口播：[lecture-voice.md](references/lecture-voice.md)、[spoken-phrases.md](references/spoken-phrases.md)
-5. 交稿前：[anti-patterns.md](references/anti-patterns.md)
-6. 对照原课，不当规范：[corpus.md](references/corpus.md)、[examples.md](references/examples.md)
+5. 课堂口语禁止清单：[humanize-classroom.md](references/humanize-classroom.md)（chrome / 否定式口号 / 比喻一拍）
+6. 交稿前：[anti-patterns.md](references/anti-patterns.md)、[BRIEF.md](BRIEF.md)
+7. 对照原课，不当规范：[corpus.md](references/corpus.md)、[examples.md](references/examples.md)
 
 ## 合格线（先于工作流）
 
@@ -35,7 +36,8 @@ description: >-
 | 工作表味 | **E/F/K 页禁止 `a:tbl`。** 数字是盒下或箭头旁的浮动演算。表只许两种：`06-TrainingTip` p3 那种 2×3 方法目录（深蓝表头、红框一列、坐在三步块上面），以及 CNN kernel / 像素阵当「格子图」。课程规划表只出现在政策课。资料流用 2.5–3.5 pt 直线 + triangle 尾，不用胖 chevron。 |
 | 密度两档 | 稀疏拍 2–8 个形状合法；机制 / Loss / 公式页通常 25–60 个形状；架构 / 网络页 60–200、可以零图。约 40 字只防空标题页。20 分钟机制课 **50–85 页** 疏密混排，不是 24 张中等吉祥物页。 |
 | 示意潦草 | 每个零件有名字、对齐；示意 = 数字假，不是图烂；宽高为正。 |
-| 不生动 | 钩子是听众正在过的场面（半条资料流 / 点线缺口 / 教室漫画）；有具体失败者；笑点是机制。 |
+| 不生动 | 钩子是听众正在过的场面（半条资料流 / 点线缺口 / 教室漫画）；有具体失败者；幽默来自机制，不是「笑点是：」标语。 |
+| AI 导播腔 | 页上无「本页算完 / 下一步」。底栏不是复盘。禁止「不是 X，是 Y」。比喻一拍能 get。见 [humanize-classroom.md](references/humanize-classroom.md)。 |
 
 宁可 50–85 张疏密混排、各站得住的页，不要 24 张中等密度吉祥物页，也不要 22 张填满数字的机制表。
 
@@ -83,7 +85,7 @@ description: >-
 
 `直尺 → y = b + wx`　`弯的资料 → 真实关系`　`对不齐 → 训练误差下不去`
 
-检验：把比喻拿掉，图和数字还讲得清；把图例拿掉，学生对不上词。后一种才说明隐喻在干活。流行文化是贴在图上的抠图，不是主题。
+检验（一拍测试，见 [humanize-classroom.md](references/humanize-classroom.md)）：听完一句，学生能不靠比喻把机制讲回去。物件已在页上或人人认识（课、文件、尺）。还要第二句解释自己 → 删比喻，留数字。对比用两个数，不用「不去旗子 A」。流行文化是贴在图上的抠图，不是主题。
 
 ### 3. 节拍
 
@@ -104,7 +106,7 @@ description: >-
 
 ### 5. 口播
 
-页上已经有图和数；嘴里指盒子、算那一笔、重复课核。见 [lecture-voice.md](references/lecture-voice.md)。
+页上已经有图和数；嘴里指盒子、算那一笔、重复课核。见 [lecture-voice.md](references/lecture-voice.md)。页上禁止导播字幕和复述黄条。
 
 ### 6–7. 检查与出片
 
@@ -112,7 +114,7 @@ description: >-
 
 - 抽每页字数：约 40 字只防空标题页
 - 搜 XML：`cx`/`cy` 不得为负；机制页 `prst="rightArrow"` ≈ 0（G 步块之间的灰箭头除外）；E/F/K 无 `a:tbl`
-- 目检：零件有名字、红框不压字、资料流是细直线不是胖 chevron、默认封面课题是白的、没有每页都贴底栏说明
+- 目检：零件有名字、红框不压字、资料流是细直线不是胖 chevron、默认封面课题是白的、无「本页/下一步」、无否定式口号、标签不与别的形状相交
 
 ## 和相邻 skill 的边界
 
