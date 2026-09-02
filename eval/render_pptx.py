@@ -3,8 +3,8 @@
 Usage: python render_pptx.py deck.pptx outdir/
 Supports the shapes this skill's generators emit: rect, roundRect, ellipse,
 line (flips/dash/arrowheads), rightArrow, mathPlus, pictures, text runs.
-Chinese preview fonts: macOS Hiragino first, then Linux Noto Sans CJK /
-Source Han Sans / WenQuanYi (real deck uses 微軟正黑體).
+Chinese preview fonts: Noto Sans CJK SC/TC, then macOS Hiragino,
+then Source Han Sans / WenQuanYi (real deck uses 微軟正黑體).
 """
 import math
 import re
@@ -26,13 +26,14 @@ OUT = Path(sys.argv[2])
 OUT.mkdir(parents=True, exist_ok=True)
 
 CJK_CANDIDATES = [
-    "/System/Library/Fonts/Hiragino Sans GB.ttc",
-    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
     "/usr/share/fonts/opentype/noto/NotoSansCJKsc-Regular.otf",
+    "/usr/share/fonts/opentype/noto/NotoSansCJKtc-Regular.otf",
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
     "/usr/share/fonts/opentype/noto/NotoSansCJK.ttc",
     "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
     "/usr/share/fonts/opentype/source-han-sans/SourceHanSansCN-Regular.otf",
     "/usr/share/fonts/source-han-sans-sc/SourceHanSansSC-Regular.otf",
+    "/System/Library/Fonts/Hiragino Sans GB.ttc",
     "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",
     "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
     "/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf",

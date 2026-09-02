@@ -14,7 +14,7 @@ git clone https://github.com/zzzfu411/lhy-lecture-skill.git ~/.cursor/skills/lhy
 
 或拷进某个项目的 `.cursor/skills/lhy-lecture-style`。
 
-说「李宏毅风格课件 / 讲课稿」时，Agent 会读这里的 `SKILL.md`。出 `.pptx` 用 python-pptx（pptxgenjs 只当等价实现）。
+说「李宏毅风格课件 / 讲课稿」时，Agent 会读这里的 `SKILL.md`。出 `.pptx` 用 python-pptx（pptxgenjs 只留附录一行）。
 
 ## 目录
 

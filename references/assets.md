@@ -2,7 +2,11 @@
 
 「精致剪贴画」不是画出来的，是**嵌 PNG**。他的课件里机器人、文件图标、人物全是 flaticon 风位图。
 
-贴纸是**可选项**。2025 许多金页零贴纸（`05-BasicML` p42 三列淡彩块；`03-LLMunderstand` p5 议程胶囊）。只在资料流页需要具象样本时才嵌下表，不要每页都嵌 `robot-f.png` + `ppt-file.png`，更不要一页贴纸游行。
+贴纸是**可选项**。`05-BasicML` 84 页里 **43 页零图**。金页经常是淡彩块，不是吉祥物（p42、`03-LLMunderstand` p5）。
+
+物体图标：**PPT 文件没有脸**；机器人是胸口写 AI 的显示器。不要给 flashlight / flag / file / box 画笑脸。
+
+本公开仓 `assets/` **只带** `ruler.png`。不要假装库里有 15 张从原件抽出的 PNG。若本课需要角色，**先按文末补目录，再画页**。
 
 **公开仓不附带从原课件提取的 PNG**（版权在原作者 / 图标原作者）。本目录只含图像生成样例 `ruler.png`。其余角色请按文末「缺角色时怎么补」，从你自己持有的课件提取，或按同款提示词生成。
 
@@ -34,7 +38,7 @@ from pptx.util import Inches
 slide.shapes.add_picture(str(ASSETS / "robot-f.png"), Inches(4.9), Inches(1.7), Inches(1.6), Inches(1.6))
 ```
 
-pptxgenjs 等价：`slide.addImage({ path, x, y, w, h })`。不要再维护第二份 API。
+pptxgenjs 附录：`slide.addImage({ path, x, y, w, h })`。生成栈只有 python-pptx。
 
 - 角色图放在流程位置上，旁边配斜体变量（*f*、*x*）或一行人话标签。
 - 同一角色整堂课复用同一张图（几何位置不动才有「复制递增」）。
@@ -55,5 +59,6 @@ pptxgenjs 等价：`slide.addImage({ path, x, y, w, h })`。不要再维护第�
 
 - 网络热图 / 水印图标
 - 把他的素材用于对外发布的商业物料（库内素材只服务个人学习课件）
-- 一页贴纸游行（手电筒 + 文件夹 + 旗 + 标签同时上场）。他一页通常 0 个或 1–3 **种**角色
+- 一页贴纸游行；给 file / flag / flashlight / box 画笑脸
 - 要求每张机制页都嵌机器人 + 文件图标
+- 在只有 `ruler.png` 时不补目录就用 emoji 开画
