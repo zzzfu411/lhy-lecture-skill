@@ -3,7 +3,8 @@
 Usage: python render_pptx.py deck.pptx outdir/
 Supports the shapes this skill's generators emit: rect, roundRect, ellipse,
 line (flips/dash/arrowheads), rightArrow, mathPlus, pictures, text runs.
-Chinese via Hiragino Sans GB (preview only; real deck uses 微軟正黑體).
+Chinese preview fonts: macOS Hiragino first, then Linux Noto Sans CJK /
+Source Han Sans / WenQuanYi (real deck uses 微軟正黑體).
 """
 import math
 import re
@@ -24,17 +25,47 @@ PPTX = sys.argv[1]
 OUT = Path(sys.argv[2])
 OUT.mkdir(parents=True, exist_ok=True)
 
-CJK = "/System/Library/Fonts/Hiragino Sans GB.ttc"
-EMOJI = "/System/Library/Fonts/Apple Color Emoji.ttc"
+CJK_CANDIDATES = [
+    "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "/usr/share/fonts/opentype/noto/NotoSansCJKsc-Regular.otf",
+    "/usr/share/fonts/opentype/noto/NotoSansCJK.ttc",
+    "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+    "/usr/share/fonts/opentype/source-han-sans/SourceHanSansCN-Regular.otf",
+    "/usr/share/fonts/source-han-sans-sc/SourceHanSansSC-Regular.otf",
+    "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",
+    "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
+    "/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf",
+]
+EMOJI_CANDIDATES = [
+    "/System/Library/Fonts/Apple Color Emoji.ttc",
+    "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf",
+    "/usr/share/fonts/truetype/noto-color-emoji/NotoColorEmoji.ttf",
+]
+
+def _first_existing(paths):
+    for p in paths:
+        if Path(p).is_file():
+            return p
+    return None
+
+CJK = _first_existing(CJK_CANDIDATES)
+EMOJI = _first_existing(EMOJI_CANDIDATES)
 FONT_CACHE = {}
 
 def font_for(px, bold=False):
     key = (px, bold)
     if key not in FONT_CACHE:
-        try:
-            FONT_CACHE[key] = ImageFont.truetype(CJK, px, index=1 if bold else 0)
-        except Exception:
-            FONT_CACHE[key] = ImageFont.truetype(CJK, px)
+        font = None
+        if CJK:
+            try:
+                font = ImageFont.truetype(CJK, px, index=1 if bold else 0)
+            except Exception:
+                try:
+                    font = ImageFont.truetype(CJK, px)
+                except Exception:
+                    font = None
+        FONT_CACHE[key] = font or ImageFont.load_default()
     return FONT_CACHE[key]
 
 EMOJI_STRIKES = [160, 137, 96, 64, 48, 40, 32, 26, 20]
@@ -42,7 +73,13 @@ def emoji_font(px):
     best = min(EMOJI_STRIKES, key=lambda s: abs(s - px))
     key = ("e", best)
     if key not in FONT_CACHE:
-        FONT_CACHE[key] = ImageFont.truetype(EMOJI, best)
+        if EMOJI:
+            try:
+                FONT_CACHE[key] = ImageFont.truetype(EMOJI, best)
+            except Exception:
+                FONT_CACHE[key] = font_for(px)
+        else:
+            FONT_CACHE[key] = font_for(px)
     return FONT_CACHE[key], best
 
 def color_of(el):
