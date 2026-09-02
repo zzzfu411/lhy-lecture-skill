@@ -1,6 +1,12 @@
 # 角色素材库（assets/）
 
-「精致剪贴画」不是画出来的，是**嵌 PNG**。他的课件里机器人、文件图标、人物全是 flaticon 风位图。生成课件时按下表嵌图，不要用灰盒子或 emoji 凑。
+「精致剪贴画」不是画出来的，是**嵌 PNG**。他的课件里机器人、文件图标、人物全是 flaticon 风位图。
+
+贴纸是**可选项**。`05-BasicML` 84 页里 **43 页零图**。金页经常是淡彩块，不是吉祥物（p42、`03-LLMunderstand` p5）。
+
+物体图标：**PPT 文件没有脸**；机器人是胸口写 AI 的显示器。不要给 flashlight / flag / file / box 画笑脸。
+
+本公开仓 `assets/` **只带** `ruler.png`。不要假装库里有 15 张从原件抽出的 PNG。若本课需要角色，**先按文末补目录，再画页**。
 
 **公开仓不附带从原课件提取的 PNG**（版权在原作者 / 图标原作者）。本目录只含图像生成样例 `ruler.png`。其余角色请按文末「缺角色时怎么补」，从你自己持有的课件提取，或按同款提示词生成。
 
@@ -25,15 +31,19 @@
 | books.png | 教材 / 文献 | 02-Agent image82 | 0.9–1.2" |
 | ruler.png | 直尺 / 只准直线的模型 | **图像生成**（以 robot-f + toolbox 为参考图） | 1.1–1.5"（横图 3:2） |
 
-## 用法（pptxgenjs）
+## 用法（python-pptx）
 
-```javascript
-slide.addImage({ path: ASSETS + "/robot-f.png", x: 4.9, y: 1.7, w: 1.6, h: 1.6 });
+```python
+from pptx.util import Inches
+slide.shapes.add_picture(str(ASSETS / "robot-f.png"), Inches(4.9), Inches(1.7), Inches(1.6), Inches(1.6))
 ```
+
+pptxgenjs 附录：`slide.addImage({ path, x, y, w, h })`。生成栈只有 python-pptx。
 
 - 角色图放在流程位置上，旁边配斜体变量（*f*、*x*）或一行人话标签。
 - 同一角色整堂课复用同一张图（几何位置不动才有「复制递增」）。
-- 多笔资料 = 同一文件图标画三份纵排 + 省略号（他用重着色区分，生成时可直接同色）。
+- 多笔资料 = 同一文件图标画三份 + 省略号，**按行重着色**（橙 / 绿 / 蓝）。不要同色了事。
+- 主资料流页：角色**类型** ≤3；资料图标可以重复 3 次。回忆 / IO 管线页用彩色圆角块即可，不必贴纸。
 - emoji 只在没有对应素材时用（他本人也用 😊），优先级：素材库 > emoji > 组合形状。
 
 ## 缺角色时怎么补（按序尝试）
@@ -49,4 +59,6 @@ slide.addImage({ path: ASSETS + "/robot-f.png", x: 4.9, y: 1.7, w: 1.6, h: 1.6 }
 
 - 网络热图 / 水印图标
 - 把他的素材用于对外发布的商业物料（库内素材只服务个人学习课件）
-- 一页塞五个以上角色（他一页通常 1–3 个）
+- 一页贴纸游行；给 file / flag / flashlight / box 画笑脸
+- 要求每张机制页都嵌机器人 + 文件图标
+- 在只有 `ruler.png` 时不补目录就用 emoji 开画
