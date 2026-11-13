@@ -1,36 +1,36 @@
 # lhy-lecture-skill
 
-Cursor Agent Skill：按李宏毅课堂手艺做课件和口播稿。只管**怎么做页、怎么说话**，换课题仍成立。
+An agent skill for Cursor and SKILL.md-compatible coding agents that distills Prof. Hung-yi Lee's (李宏毅) classroom slide design and spoken lecture craft into topic-agnostic authoring rules.
 
-本仓库从学习仓 `cloud-2summer` 里的 `.cursor/skills/lhy-lecture-style` 单独拆出。
+English · [简体中文](README.zh-CN.md)
 
-## 安装
+## Craft Rules
 
-个人全局：
+- **Chalkboard dataflow slides** — Builds 16:9 white-canvas mechanism slides (with black section covers) around one complete labeled diagram (`10–25` elements, inline numeric calculations, blue `w` / red `b` formula highlights, dashed callouts, and zero worksheet tables), unfolded via duplicate-and-increment steps.
+- **Single mapped metaphor** — Grounds each lecture in one explicit everyday-to-technical legend that carries through concrete arithmetic, paired with question-driven slide titles and vernacular spoken scripts (`口播`).
+- **Pre-delivery gates** — Enforces minimum per-slide text density, positive shape dimensions (`cx`/`cy`), anti-pattern checks ([references/anti-patterns.md](references/anti-patterns.md)), and visual layout inspection alongside your environment's `pptx` rendering skill.
+
+## Installation
+
+Install globally for Cursor:
 
 ```bash
 git clone https://github.com/zzzfu411/lhy-lecture-skill.git ~/.cursor/skills/lhy-lecture-style
 ```
 
-或拷进某个项目的 `.cursor/skills/lhy-lecture-style`。
+Or copy into a project's `.cursor/skills/lhy-lecture-style` (or `~/.claude/skills/lhy-lecture-style`). Ask for "Hung-yi Lee style slides or lecture script" (`李宏毅风格课件 / 讲课稿`) to load [SKILL.md](SKILL.md); `.pptx` generation delegates drawing primitives to your installed `pptx` skill.
 
-说「李宏毅风格课件 / 讲课稿」时，Agent 会读这里的 `SKILL.md`。出 `.pptx` 时画页仍跟 Cursor 的 `pptx` skill。
+## Repository Layout
 
-## 目录
+| Path | Contents |
+| --- | --- |
+| [SKILL.md](SKILL.md) | Entry workflow, 8-step authoring checklist, and quality gates |
+| [references/](references/) | Visual specs, slide archetypes, rhetoric, spoken phrasing, anti-patterns, and corpus notes |
+| [assets/ruler.png](assets/ruler.png) | Sample AI-generated flat sticker icon matching the classroom clipart style |
+| [eval/](eval/) | Topic-transfer evaluation plan, `pptxgenjs` generator script, and spoken script on model bias |
 
-| 路径 | 内容 |
-|------|------|
-| `SKILL.md` | 入口、合格线、工作流 |
-| `references/` | 视觉、页型、口播、反模式、语料对照 |
-| `assets/` | 公开仓只带图像生成的样例 `ruler.png` |
-| `eval/` | bias 换题实测的计划、脚本、口播（不含成品 pptx） |
+## Assets & Copyright
 
-## 贴图版权
+Original clipart PNGs from Prof. Hung-yi Lee's `ppt/media/` slide decks are **not redistributed** in this public repository; those rights remain with the original courseware and icon authors. Follow [references/assets.md](references/assets.md) to extract icons from your own personal courseware copies or generate matching stickers.
 
-从李宏毅原课件 `ppt/media/` 提取的机器人、文件图标等 **PNG 不进本公开仓**。那些图版权在原课件/图标原作者，只可在你自己持有的课件副本里个人学习复用。
-
-需要角色图时：按 `references/assets.md` 从你自己的课件提取，或按同文件的提示词生成。
-
-## 许可
-
-仓库里的 skill 正文（`SKILL.md`、`references/`、`eval/` 文稿）由本仓库作者整理。未另附开源许可证时，默认保留版权。不要把本 skill 冒充李宏毅老师本人发布的教材。
+The skill specifications and scripts (`SKILL.md`, `references/`, `eval/`) are authored by the repository maintainer with all rights reserved unless otherwise noted. Do not pass off generated materials as official courseware by Prof. Hung-yi Lee.
